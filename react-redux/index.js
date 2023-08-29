@@ -17,3 +17,21 @@ const decrement = () => {
         'type': DECREMENT
     }
 }
+
+const counterReducer = (state, action) => {
+    switch (action.type) {
+        case INCREMENT:
+            return {
+                ...initialCounter,
+                count: initialCounter.count += 1
+            }
+        case DECREMENT:
+            return {
+                ...initialCounter,
+               count: initialCounter.count -= 1
+            }
+    
+        default:
+            return initialCounter;
+    }
+}
