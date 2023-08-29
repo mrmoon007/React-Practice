@@ -1,52 +1,103 @@
 const { createStore } = require("redux")
 
 
-const INCREMENT = 'INCREMENT'
-const DECREMENT = 'DECREMENT'
+// const INCREMENT = 'INCREMENT'
+// const DECREMENT = 'DECREMENT'
 
 
-const initialCounter = {
+// const initialCounter = {
+//     count: 0
+// }
+
+// const increment = () => {
+//     return {
+//         'type': INCREMENT
+//     }
+// }
+
+// const decrement = () => {
+//     return {
+//         'type': DECREMENT
+//     }
+// }
+
+// const counterReducer = (state, action) => {
+//     switch (action.type) {
+//         case INCREMENT:
+//             return {
+//                 ...initialCounter,
+//                 count: initialCounter.count += 1
+//             }
+//         case DECREMENT:
+//             return {
+//                 ...initialCounter,
+//                count: initialCounter.count -= 1
+//             }
+    
+//         default:
+//             return initialCounter;
+//     }
+// }
+
+// const store = createStore(counterReducer);
+
+// store.subscribe(()=>{
+//     console.log(store.getState());
+// })
+
+// store.dispatch(increment());
+// store.dispatch(increment());
+// store.dispatch(increment());
+// store.dispatch(decrement());
+// store.dispatch(decrement());
+
+const INCREMENT = 'INCREMENT';
+const DECREMENT = 'DECREMENT';
+const INCREMENT_BY_PAYLOAD = 'INCREMENT_BY_PAYLOAD';
+const DECREMENT_BY_PAYLOAD = 'DECREMENT_BY_PAYLOAD';
+
+const counterState = {
     count: 0
 }
 
-const increment = () => {
+const incrementByPayload = (payload) => {
     return {
-        'type': INCREMENT
+        type: INCREMENT_BY_PAYLOAD,
+        payload: payload
     }
 }
 
-const decrement = () => {
+const decrementByPayload = (payload) => {
     return {
-        'type': DECREMENT
+        type: DECREMENT_BY_PAYLOAD,
+        payload: payload
     }
 }
 
-const counterReducer = (state, action) => {
+const counterWithPayloadReducer = (state = counterState, action) => {
     switch (action.type) {
-        case INCREMENT:
+        case INCREMENT_BY_PAYLOAD:
             return {
-                ...initialCounter,
-                count: initialCounter.count += 1
+                ...state,
+                count: state.count += action.payload
             }
-        case DECREMENT:
+        case DECREMENT_BY_PAYLOAD:
             return {
-                ...initialCounter,
-               count: initialCounter.count -= 1
+                ...state,
+                count: state.count -= action.payload
             }
     
         default:
-            return initialCounter;
+            return state;
     }
 }
 
-const store = createStore(counterReducer);
+const store = createStore(counterWithPayloadReducer);
 
-store.subscribe(()=>{
+store.subscribe(() => {
     console.log(store.getState());
 })
 
-store.dispatch(increment());
-store.dispatch(increment());
-store.dispatch(increment());
-store.dispatch(decrement());
-store.dispatch(decrement());
+store.dispatch(incrementByPayload(5));
+store.dispatch(incrementByPayload(20));
+store.dispatch(decrementByPayload(10));
