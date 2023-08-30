@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import './App.css'
-import {decrement, increment, reset} from './sevices/actions/counterAction'
+import {decrement, increment, incrementByValue, reset} from './sevices/actions/counterAction'
 
 function App() {
   const count = useSelector((state)=> state.count );
@@ -23,6 +23,9 @@ function App() {
         </button>
         <button onClick={() => dispatch(reset())}>
          reset
+        </button>
+        <button onClick={() => dispatch(incrementByValue(5))}>
+         increment by 5
         </button>
         
       </div>

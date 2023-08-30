@@ -1,4 +1,4 @@
-import { DECREMENT, INCREMENT, RESET } from "../constans/counter"
+import { DECREMENT, INCREMENT, INCREMENT_BY_VALUE, RESET } from "../constans/counter"
 
 export const increment = () => {
     return {
@@ -15,5 +15,11 @@ export const decrement = () => {
 export const reset =() => {
     return {
         type: RESET
+    }
+}
+export const incrementByValue =(value) => {
+    return {
+        type: INCREMENT_BY_VALUE,
+        payload: value
     }
 }
