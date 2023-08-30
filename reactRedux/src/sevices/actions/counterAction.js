@@ -1,13 +1,19 @@
 import { DECREMENT, INCREMENT, RESET } from "../constans/counter"
 
 export const increment = () => {
-    type: INCREMENT
+    return {
+        type: INCREMENT
+    }
 }
 
 export const decrement = () => {
-    type: DECREMENT
+    return {
+        type: DECREMENT
+    }
 }
 
 export const reset =() => {
-    type: RESET
+    return {
+        type: RESET
+    }
 }

@@ -1,8 +1,11 @@
-import { useState } from 'react'
+import { useDispatch, useSelector } from 'react-redux'
 import './App.css'
+import {increment} from './sevices/actions/counterAction'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const count = useSelector((state)=> state.count );
+  const dispatch = useDispatch()
+
 
   return (
     <>
@@ -11,7 +14,7 @@ function App() {
       </div>
       <h1>React Redux Counter</h1>
       <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
+        <button onClick={() => dispatch(increment())}>
           count is {count}
         </button>
         

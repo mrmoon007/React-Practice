@@ -1,6 +1,7 @@
 import counterReducer from "./sevices/reducers/counterReducer";
-import { createStore } from 'redux'
+import { applyMiddleware, createStore } from 'redux'
+import thunk from 'redux-thunk'
 
-const store = createStore(counterReducer);
+const store = createStore(counterReducer, applyMiddleware(thunk));
 
 export default store;
