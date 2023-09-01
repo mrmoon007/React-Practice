@@ -1,4 +1,5 @@
 import { FAILl_REQUEST, GET_REQUEST, SUCCESS_REQUEST, URL } from "../constants/fetchDataConstants"
+import axios from "axios";
 
 const fetchData = ()=> async(disptch) => {
     disptch({type: GET_REQUEST});
