@@ -10,7 +10,7 @@ const initialState = {
   error: null,
 };
 
-const fetchDataReducer = (state = initialState, action) => {
+export const fetchDataReducer = (state = initialState, action) => {
   switch (action.type) {
     case GET_REQUEST:
       return {
