@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import ClickCounter from './components/ClickCounter'
 import MouseHover from './components/MouseHover'
+import InputCounter from './components/InputCounter'
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
       <h1>hello app component</h1>
       <ClickCounter />
       <MouseHover />
+      <InputCounter />
     </>
   )
 }
