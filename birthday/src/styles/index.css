@@ -1,0 +1,45 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+    --grey: #fae8ff;
+    --white: #ffffff;
+    
+    --letterSpacing: 1px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: var(--grey);
+}
+
+main {
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.container {
+    width: 90vw;
+    margin: 5rem 0;
+    max-width: 600px;
+    background-color: var(--white);
+    border-radius: .25rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, .1), 0 1px 2px 0 rgba(0, 0, 0, .06);
+    padding: 1.5rem 2rem;
+}
+
+.container h3 {
+    margin: 2rem;
+    font-size: 1.953rem;
+    font-weight: 400;
+    line-height: 1;
+    text-transform: capitalize;
+    letter-spacing: var(--letterSpacing);
+}
