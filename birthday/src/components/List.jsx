@@ -1,15 +1,15 @@
 import React from 'react'
-import img from '/img/person-1.jpeg'
 
-export default function List() {
+export default function List({item}) {
+  const {name, age, image} = item;
   return (
     <div className='birthdayCard'>
       <div>
-        <img src={img} alt="photo" />
+        <img src={image} alt="photo" />
       </div>
       <div>
-        <h4 className="title">Mr Moon</h4>
-        <p className="age">29 years</p>
+        <h4 className="title">{ name }</h4>
+        <p className="age">{age} years</p>
       </div>
     </div>
   )
