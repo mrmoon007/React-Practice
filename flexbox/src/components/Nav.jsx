@@ -5,7 +5,7 @@ export default function Nav() {
     <>
       <header>
         <div>
-            <img src="" alt="logo" />
+            <img className='img' src="images.jpg" alt="logo" />
         </div>
         <nav>
             <ul>
